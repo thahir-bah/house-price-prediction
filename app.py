@@ -34,21 +34,25 @@ def predict(bedrooms, bathrooms, sqft_living, view, grade, sqft_basement, sqft_l
         'sqft_living15': [sqft_living15]
     })
     
-    print(input_data)
-
-    scaler = charger_transformation()
-    data_scaled = scaler.transform(input_data)
-    data_scaled = pd.DataFrame(data_scaled, columns= input_data.columns)
-    print(data_scaled)
-
-    rfg = charger_modele()
-    
-    prediction = rfg.predict(data_scaled)
-    
-    st.markdown(
-        f"<p style='font-size:24px; font-weight:bold;'>Le prix de la maison est : {prediction[0]}</p>", 
+    if input_data['sqft_living'] == 0:
+        st.markdown(
+            f"<p style='font-size:24px; font-weight:bold;'>Le prix de la maison ne peut etre calculé</p>", 
         unsafe_allow_html=True
-    )
+        )
+    else:
+        scaler = charger_transformation()
+        data_scaled = scaler.transform(input_data)
+        data_scaled = pd.DataFrame(data_scaled, columns= input_data.columns)
+        print(data_scaled)
+
+        rfg = charger_modele()
+        
+        prediction = rfg.predict(data_scaled)
+        
+        st.markdown(
+            f"<p style='font-size:24px; font-weight:bold;'>Le prix de la maison est : {prediction[0]}</p>", 
+            unsafe_allow_html=True
+        )
 
 
 
