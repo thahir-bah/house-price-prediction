@@ -9,15 +9,9 @@ def charger_modele():
         rfg = pickle.load(fichier_modele)
     return rfg
 
-# def charger_transformation():
-#     with open('scaler.pkl', 'rb') as fichier_transformation:
-#         scaler = pickle.load(fichier_transformation)
-#     return scaler
-
 def charger_transformation():
-    url = "https://github.com/thahir-bah/house-price-prediction/blob/main/scaler.pkl"
-    response = requests.get(url)
-    scaler = pickle.loads(response.content)
+    with open('scaler.pkl', 'rb') as fichier_transformation:
+        scaler = pickle.load(fichier_transformation)
     return scaler
 
 
