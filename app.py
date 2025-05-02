@@ -5,7 +5,7 @@ import requests
 
 
 def charger_modele():
-    url = "https://www.dropbox.com/scl/fi/nzk2ejr8a5c7ws2qb8d8r/random_forest_model.pkl?rlkey=2sob7vo4i0l37vmu9xp51snh2&st=1ghra874&dl=0"
+    url = "https://www.dropbox.com/scl/fi/nzk2ejr8a5c7ws2qb8d8r/random_forest_model.pkl?rlkey=2sob7vo4i0l37vmu9xp51snh2&st=1ghra874&dl=1"
     response = requests.get(url)
     rfg = pickle.loads(response.content)
     return rfg
@@ -16,7 +16,7 @@ def charger_modele():
 #     return scaler
 
 def charger_transformation():
-    url = "https://www.dropbox.com/scl/fi/91aro32hn0s6i0mjuv1tn/scaler.pkl?rlkey=uezpvhlk6rkynl4flhg08tei2&st=3un7p9y9&dl=0"
+    url = "https://www.dropbox.com/scl/fi/91aro32hn0s6i0mjuv1tn/scaler.pkl?rlkey=uezpvhlk6rkynl4flhg08tei2&st=3un7p9y9&dl=1"
     response = requests.get(url)
     scaler = pickle.loads(response.content)
     return scaler
