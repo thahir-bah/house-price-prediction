@@ -34,7 +34,7 @@ def predict(bedrooms, bathrooms, sqft_living, view, grade, sqft_basement, sqft_l
         'sqft_living15': [sqft_living15]
     })
     
-    if input_data['sqft_living'] == 0:
+    if input_data['sqft_living'].values == 0:
         st.markdown(
             f"<p style='font-size:24px; font-weight:bold;'>Le prix de la maison ne peut etre calculé</p>", 
         unsafe_allow_html=True
