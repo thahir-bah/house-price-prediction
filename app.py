@@ -63,7 +63,7 @@ def main():
         
     bedrooms = st.number_input('Nombre de chambres', min_value=0, max_value=6, value=0)
     bathrooms = st.number_input('Nombre de salles de bains', min_value=0.0, max_value=5.0, value=0.0, step=0.5,  format="%.2f")
-    sqft_living = st.number_input('Surface habitable', min_value=0.0, max_value=15000.0, value=0.0 )
+    sqft_living = st.number_input('Surface habitable', min_value=250.0, max_value=15000.0, value=0.0 )
     view = st.slider('Vue',  min_value=0, max_value=4, value=0)
     grade = st.slider('Qualité',  min_value=1, max_value=13, value=6)
     sqft_basement =  st.number_input('Surface sous-sol', min_value=0.0, max_value=5000.0, value=0.0 )
